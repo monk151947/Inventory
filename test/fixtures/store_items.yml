@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  store_type_id: 1
+  store_id: 
+  store_category_id: 1
+  price: 9.99
+  quantity: 1
+  tax: 9.99
+
+two:
+  name: MyString
+  store_type_id: 1
+  store_id: 
+  store_category_id: 1
+  price: 9.99
+  quantity: 1
+  tax: 9.99

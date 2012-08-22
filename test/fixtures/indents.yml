@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  indent_no: 1
+  name: MyString
+  store_id: 1
+  description: MyText
+
+two:
+  indent_no: 1
+  name: MyString
+  store_id: 1
+  description: MyText

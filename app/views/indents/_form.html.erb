@@ -1,0 +1,42 @@
+<%= form_for @indent, :html => { :class => 'form-horizontal' } do |f| %>
+<%= render 'shared/error_msg', object: f.object %>
+  <div class="control-group">
+    <%= f.label :indent_no, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :indent_no, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :store_id, :class => 'control-label' %>
+    <div class="controls">
+ <%= collection_select(:indent, :store_id, Store.all, :id, :name) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' , :size => '5x5' %>
+    </div>
+  </div>
+
+<%= f.fields_for :indent_items do |ff| %>
+
+<%= render 'indent_item_fields', f: ff %>
+<% end %>
+ <%= link_to_add_fields "Add Items ", f, :indent_items %>
+</ br>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                indents_path, :class => 'btn' %>
+  </div>
+<% end %>
+

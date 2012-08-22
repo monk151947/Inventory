@@ -1,0 +1,54 @@
+<%- model_class = @indent.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "Indent"%></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong> Name :</strong></dt>
+  <dd><%= @indent.name %></dd>
+  <dt><strong>Indent No :</strong></dt>
+  <dd><%= @indent.indent_no %></dd>
+
+  <dt><strong>Description:</strong></dt>
+  <dd><%= @indent.description %></dd>
+  <dt><strong>Store:</strong></dt>
+  <dd><%= @indent.store.name unless @indent.store_id.nil? %></dd>
+</dl>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Item name</th>
+      <th>Issued </th>
+      <th>Issued</th>
+      <th>Required</th>
+      <th>Pending</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% @indent.indent_items.each do |item| %>
+<tr>
+<td><%= item.store_item_id %></td>
+<td><%= item.issued %></td>
+<td><%= item.issued %></td>
+<td><%= item.required %></td>
+<td><%= item.pending %></td>
+<td><%= item.price %></td>
+<% end %>
+</tbody>
+</table>
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              indents_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_indent_path(@indent), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              indent_path(@indent),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  indent_id: 1
+  store_item_id: 1
+  price: 9.99
+  issued: 
+  pending: 1
+  required: 1
+
+two:
+  indent_id: 1
+  store_item_id: 1
+  price: 9.99
+  issued: 
+  pending: 1
+  required: 1

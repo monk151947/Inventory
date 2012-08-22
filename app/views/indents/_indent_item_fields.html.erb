@@ -1,0 +1,13 @@
+
+<fieldset>
+<%= collection_select(:indent_item, :store_item_id, StoreItem.all, :id, :name)%>
+<%= f.text_field :issued, :class => 'input-medium', :placeholder =>"Issued Type" %>
+<%#= f.text_field :quantity, :class => 'input-small', :placeholder =>"Qunatity" %>
+<%= f.text_field :price, :class => 'input-small', :placeholder =>"Price" %>
+<%= f.text_field :pending, :class => 'input-small', :placeholder =>"Pending" %>
+<%= f.text_field :issued, :class => 'input-small', :placeholder =>"Issued " %>
+<%= f.text_field :required, :class => 'input-small', :placeholder =>"Required" %>
+<%= f.hidden_field :_destroy %>
+<%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>
+
