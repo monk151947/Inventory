@@ -20,13 +20,9 @@ class StoresController < ApplicationController
     @store = Store.new(params[:store])
 
     respond_to do |format|
-      if @store.save
+      @store.save
         format.html { redirect_to stores_url, notice: 'Store was successfully created.' }
         format.js
-      else
-        format.html { render action: "new" }
-        format.js { render action: "new" }
-      end
     end
   end
 
@@ -34,13 +30,9 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
 
     respond_to do |format|
-      if @store.update_attributes(params[:store])
+      @store.update_attributes(params[:store])
         format.html { redirect_to stores_url, notice: 'Store was successfully updated.' }
-        format.js
-      else
-        format.html { render action: "new" }
-        format.js { render action: "new" }
-      end
+        format.js 
     end
   end
 

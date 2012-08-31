@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-striped">
+<table class="table table-bordered" id="store_category">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -14,25 +14,12 @@
   </thead>
   <tbody>
     <% @store_categories.each do |store_category| %>
-      <tr>
-        <td><%= link_to store_category.id, store_category_path(store_category) %></td>
-        <td><%= store_category.name %></td>
-        <td><%= store_category.code %></td>
-        <td><%=l store_category.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_store_category_path(store_category), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      store_category_path(store_category),
-                      :method => :delete,
-                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
+      <%= render store_category %>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_store_category_path,
-            :class => 'btn btn-primary' %>
+
+<div id="ffor" >
+<%= render :partial => 'form' %>
+</div>

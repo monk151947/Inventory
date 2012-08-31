@@ -12,7 +12,7 @@
   <dt><strong>Description:</strong></dt>
   <dd><%= @indent.description %></dd>
   <dt><strong>Store:</strong></dt>
-  <dd><%= @indent.store.name unless @indent.store_id.nil? %></dd>
+  <dd><%= @indent.store_name %></dd>
 </dl>
 <table class="table table-bordered">
   <thead>
@@ -29,13 +29,14 @@
 
 <% @indent.indent_items.each do |item| %>
 <tr>
-<td><%= item.store_item_id %></td>
+<td><%= item.store_item_name %></td>
 <td><%= item.issued %></td>
 <td><%= item.issued %></td>
 <td><%= item.required %></td>
 <td><%= item.pending %></td>
 <td><%= item.price %></td>
 <% end %>
+</tr>
 </tbody>
 </table>
 

@@ -1,11 +1,20 @@
 <%= form_for @indent, :html => { :class => 'form-horizontal' } do |f| %>
 <%= render 'shared/error_msg', object: f.object %>
+ <% if indent = Indent.last %>
+  <div class="control-group">
+    <%= f.label :indent_no, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :indent_no, :class => 'number_field' , :value => indent.indent_no.next %>
+    </div>
+  </div>
+<% else  %>
   <div class="control-group">
     <%= f.label :indent_no, :class => 'control-label' %>
     <div class="controls">
       <%= f.number_field :indent_no, :class => 'number_field' %>
     </div>
   </div>
+<% end  %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -15,7 +24,7 @@
   <div class="control-group">
     <%= f.label :store_id, :class => 'control-label' %>
     <div class="controls">
- <%= collection_select(:indent, :store_id, Store.all, :id, :name) %>
+ <%= collection_select(:indent, :store_id, Store.all, :id, :name,  :prompt => "Select Store") %>
     </div>
   </div>
   <div class="control-group">

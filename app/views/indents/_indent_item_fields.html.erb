@@ -1,6 +1,6 @@
 
 <fieldset>
-<%= collection_select(:indent_item, :store_item_id, StoreItem.all, :id, :name)%>
+<%= f.collection_select :store_item_id, StoreItem.all, :id, :name, :prompt => "Select store items"%>
 <%= f.text_field :issued, :class => 'input-medium', :placeholder =>"Issued Type" %>
 <%#= f.text_field :quantity, :class => 'input-small', :placeholder =>"Qunatity" %>
 <%= f.text_field :price, :class => 'input-small', :placeholder =>"Price" %>

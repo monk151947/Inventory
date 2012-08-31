@@ -7,5 +7,10 @@ class Indent < ActiveRecord::Base
   validates :description, :length => { :minimum => 2, :maximum => 60 }, presence: true
   validates :indent_no, presence: true, :numericality => true
   validates :store_id, presence: true, :numericality => true
+
+  def store_name
+    store.name unless store.nil?
+  end
+
 end
 

@@ -1,0 +1,7 @@
+$("#store_type_<%= @store_type.id %>").replaceWith("<%= j render @store_type %>");
+// reset for new form
+<% aa = @store_type.id%>
+<% @store_type = StoreType.new %>
+$("#edit_store_type_<%= aa %>").replaceWith("<%= j render 'form'  %>");
+$("#new_store_type")[0].reset();
+

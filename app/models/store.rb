@@ -1,6 +1,7 @@
 class Store < ActiveRecord::Base
   attr_accessible :code, :name
   has_many :indents
+  has_many :store_items
 #  validates :name, :length => { :minimum => 2, :maximum => 30 }, presence: true
 #  validates :code, :length => { :minimum => 2, :maximum => 10 }, presence: true
 

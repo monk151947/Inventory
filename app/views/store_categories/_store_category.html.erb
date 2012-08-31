@@ -1,0 +1,15 @@
+<tr id="<%= dom_id store_category %>">
+        <td><%= link_to store_category.id, store_category_path(store_category) %></td>
+        <td><%= store_category.name %></td>
+        <td><%= store_category.code %></td>
+        <td><%=l store_category.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_store_category_path(store_category), :class => 'btn btn-mini', :remote=> true %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      store_category_path(store_category),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger', :remote => true %>
+        </td>
+      </tr>

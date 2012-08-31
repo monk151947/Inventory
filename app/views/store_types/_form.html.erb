@@ -1,4 +1,4 @@
-<%= form_for @store_type, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @store_type, :html => { :class => 'form-horizontal' }, :remote => true do |f| %>
 <%= render 'shared/error_msg', object: f.object %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
