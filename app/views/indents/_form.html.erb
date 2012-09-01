@@ -24,7 +24,7 @@
   <div class="control-group">
     <%= f.label :store_id, :class => 'control-label' %>
     <div class="controls">
- <%= collection_select(:indent, :store_id, Store.all, :id, :name,  :prompt => "Select Store") %>
+ <%= collection_select(:indent, :store_id, Store.order(:name), :id, :name,  :prompt => "Select Store") %>
     </div>
   </div>
   <div class="control-group">

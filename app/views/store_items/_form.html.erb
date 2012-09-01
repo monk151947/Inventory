@@ -9,19 +9,19 @@
   <div class="control-group">
     <%= f.label :store_type_id, :class => 'control-label' %>
     <div class="controls">
-      <%= collection_select(:store_item, :store_type_id, StoreType.all, :id, :name,  :prompt => "Select store type")%>
+      <%= collection_select(:store_item, :store_type_id, StoreType.order(:name), :id, :name,  :prompt => "Select store type")%>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :store_id, :class => 'control-label' %>
     <div class="controls">
-      <%= collection_select(:store_item, :store_id, Store.all, :id, :name,  :prompt => "Select Store") %>
+      <%= collection_select(:store_item, :store_id, Store.order(:name), :id, :name,  :prompt => "Select Store") %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :store_category_id, :class => 'control-label' %>
     <div class="controls">
-      <%= collection_select(:store_item, :store_category_id, StoreCategory.all, :id, :name,  :prompt => "Select Store") %>
+      <%= collection_select(:store_item, :store_category_id, StoreCategory.order(:name), :id, :name,  :prompt => "Select Store") %>
     </div>
   </div>
   <div class="control-group">

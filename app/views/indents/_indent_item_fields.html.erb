@@ -1,13 +1,18 @@
 
 <fieldset>
-<%= f.collection_select :store_item_id, StoreItem.all, :id, :name, :prompt => "Select store items"%>
-<%= f.text_field :issued, :class => 'input-medium', :placeholder =>"Issued Type" %>
+<table>
+<tr>
+
+<td id='indent_item'><%= f.grouped_collection_select(:store_item_id, Store.order(:name),:store_items,:name, :id, :name, {:prompt => "Select store items"}, {:class => "indent_item"})%></td>
+<td><%= f.text_field :issued, :class => 'input-medium', :placeholder =>"Issued Type" %></td>
 <%#= f.text_field :quantity, :class => 'input-small', :placeholder =>"Qunatity" %>
-<%= f.text_field :price, :class => 'input-small', :placeholder =>"Price" %>
-<%= f.text_field :pending, :class => 'input-small', :placeholder =>"Pending" %>
-<%= f.text_field :issued, :class => 'input-small', :placeholder =>"Issued " %>
-<%= f.text_field :required, :class => 'input-small', :placeholder =>"Required" %>
+<td><%= f.text_field :price, :class => 'input-small', :placeholder =>"Price" %></td>
+<td><%= f.text_field :pending, :class => 'input-small', :placeholder =>"Pending" %></td>
+<td><%= f.text_field :issued, :class => 'input-small', :placeholder =>"Issued " %></td>
+<td><%= f.text_field :required, :class => 'input-small', :placeholder =>"Required" %></td>
 <%= f.hidden_field :_destroy %>
-<%= link_to "remove", '#', class: "remove_fields" %>
+<td><%= link_to "remove", '#', :class => "remove_fields" %></td>
+</tr>
+</table>
 </fieldset>
 
